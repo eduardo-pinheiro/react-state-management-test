@@ -6,9 +6,11 @@ import { UseStateList } from '../UseStateList';
 
 interface IProps {
   currentPage: string;
+  itemsArray: any[];
   changeToRecoilPage: () => void;
   changeToReduxPage: () => void;
   changeToUseStatePage: () => void;
+  onChangeItemsLength: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RootViewNoMemo: React.FC<IProps> = (props) => (
@@ -17,6 +19,7 @@ const RootViewNoMemo: React.FC<IProps> = (props) => (
       <button onClick={props.changeToRecoilPage}>Recoil</button>
       <button onClick={props.changeToReduxPage}>Redux</button>
       <button onClick={props.changeToUseStatePage}>Use State</button>
+      <input onChange={props.onChangeItemsLength} value={props.itemsArray.length} />
     </header>
 
     <body className='body'>
