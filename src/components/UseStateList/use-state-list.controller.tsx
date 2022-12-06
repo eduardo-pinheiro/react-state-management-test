@@ -9,7 +9,6 @@ const UseStateList: React.FC<IUseStateList> = (props) => {
   } = props;
 
   const [items, setItems] = useState(itemsArray);
-
   useEffect(() => setItems(itemsArray), [itemsArray]);
 
   const handleChangeLabel = useCallback((text: string, itemId: number) => {
