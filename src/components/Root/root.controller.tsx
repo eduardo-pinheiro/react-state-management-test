@@ -1,20 +1,25 @@
 import React, { useCallback, useState } from 'react';
 import RootView from './root.view';
 import IRoot from './root.props';
+import { IItem } from '../../types';
 
 const Root: React.FC<IRoot> = () => {
-  const [currentPage, setCurrentPage] = useState("recoil");
-  const [itemsArray, setArray] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState("use-state");
+  const [itemsArray, setItemsArray] = useState<IItem[]>([
+    { id: 1, label: '1' }, { id: 2, label: '2' }, { id: 3, label: '3' }, { id: 4, label: '4' }, { id: 5, label: '5' },
+  ]);
 
   const changeToRecoilPage = useCallback(() => setCurrentPage('recoil'), []);
-  const changeToReduxPage = useCallback(() => setCurrentPage('redux'), []);
   const changeToUseStatePage = useCallback(() => setCurrentPage('use-state'), []);
 
   const onChangeItemsLength = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const itemsLength = Number(event.target.value);
     if (itemsLength < 10000000) {
-      const itemsArray = new Array(itemsLength).fill("hellow world");
-      setArray(itemsArray);
+      const itemsArray: IItem[] = [];
+      for (let index = 0; index < itemsLength; index++) {
+        itemsArray.push({ label: String(index), id: index });
+      }
+      setItemsArray(itemsArray);
     }
   }, []);
 
@@ -23,7 +28,6 @@ const Root: React.FC<IRoot> = () => {
       currentPage={currentPage}
       itemsArray={itemsArray}
       changeToRecoilPage={changeToRecoilPage}
-      changeToReduxPage={changeToReduxPage}
       changeToUseStatePage={changeToUseStatePage}
       onChangeItemsLength={onChangeItemsLength}
     />
