@@ -9,7 +9,6 @@ const UseStateList: React.FC<IUseStateList> = (props) => {
   } = props;
 
   const [items, setItems] = useState(itemsArray);
-  const [activeItem, setActiveItem] = useState<IItem | null>(null);
 
   useEffect(() => setItems(itemsArray), [itemsArray]);
 
@@ -25,8 +24,6 @@ const UseStateList: React.FC<IUseStateList> = (props) => {
   return (
     <UseStateListView
       itemsArray={itemsArray}
-      activeItem={activeItem}
-      setActiveItem={setActiveItem}
       onChangeLabel={handleChangeLabel}
     />
   );

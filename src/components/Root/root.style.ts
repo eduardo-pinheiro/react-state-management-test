@@ -23,10 +23,6 @@ const RootWrapper = styled.div`${() => css`
     .body {
       flex: 1;
     }
-
-    .--active {
-      border: 2px solid red;
-    }
   }
 `}`;
 

@@ -5,8 +5,6 @@ import UseStateListWrapper from './use-state-list.style';
 
 interface IProps {
   itemsArray: IItem[];
-  activeItem: IItem | null;
-  setActiveItem: (item: IItem) => void;
   onChangeLabel: (label: string, itemId: number) => void;
 }
 
@@ -16,8 +14,6 @@ const UseStateListViewNoMemo: React.FC<IProps> = (props) => (
     {props.itemsArray.map((item) => (
       <Item
         item={item}
-        activeItem={props.activeItem}
-        onClickActive={props.setActiveItem}
         onChangeLabel={props.onChangeLabel}
       />
     ))}
