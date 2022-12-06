@@ -10,6 +10,9 @@ const ItemViewNoMemo: React.FC<IProps> = (props) => (
   <ItemWrapper className='item-component'>
     <div className="item">
       <h3>Item <input onChange={props.onChangeLabel} value={props.label} /></h3>
+      <button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button />
+      <button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button />
+      <button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button /><button />
     </div>
   </ItemWrapper>
 );

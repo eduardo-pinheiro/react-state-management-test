@@ -4,7 +4,7 @@ import itemByIdAtom from "./atom";
 
 const useItemByIdDispatch = (itemByIdId?: number) => {
   return useRecoilCallback(({ set }) => (payload: IItem | null, id?: number) => {
-    set(itemByIdAtom((id || itemByIdId) as number), () => payload);
+    set(itemByIdAtom((typeof id === 'number' ? id : itemByIdId) as number), () => payload);
   }, []);
 };
 
