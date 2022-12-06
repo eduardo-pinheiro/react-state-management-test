@@ -1,11 +1,11 @@
 import { useRecoilCallback } from "recoil";
 import { IItem } from "../../../../types";
-import itemAtom from "./atom";
+import itemByIdAtom from "./atom";
 
-const useItemDispatch = (itemId: number) => {
-  return useRecoilCallback(({ set }) => (payload: IItem | null) => {
-    set(itemAtom(itemId), () => payload);
+const useItemByIdDispatch = (itemByIdId?: number) => {
+  return useRecoilCallback(({ set }) => (payload: IItem | null, id?: number) => {
+    set(itemByIdAtom((id || itemByIdId) as number), () => payload);
   }, []);
 };
 
-export default useItemDispatch;
+export default useItemByIdDispatch;

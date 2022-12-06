@@ -1,9 +1,9 @@
 import { atomFamily } from 'recoil';
 import { IItem } from '../../../../types';
 
-const itemAtom = atomFamily<IItem | null, number>({
-  key: 'item-atom-family',
+const itemByIdAtom = atomFamily<IItem | null, number>({
+  key: 'item-by-id-atom-family',
   default: null,
 });
 
-export default itemAtom;
+export default itemByIdAtom;

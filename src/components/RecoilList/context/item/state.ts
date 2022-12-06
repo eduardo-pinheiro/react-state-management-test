@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { IItem } from "../../../../types";
-import itemAtom from "./atom";
+import itemByIdAtom from "./atom";
 
-const useItem = (itemId: number) => useRecoilState<IItem | null>(itemAtom(itemId));
-export default useItem;
+const useItemById = (itemByIdId: number) => useRecoilState<IItem | null>(itemByIdAtom(itemByIdId));
+export default useItemById;

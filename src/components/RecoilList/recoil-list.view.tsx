@@ -1,11 +1,18 @@
 import React from 'react';
 import RecoilListWrapper from './recoil-list.style';
+import { IItem } from '../../types';
+import { Item } from './components/Item';
 
-interface IProps {}
+interface IProps {
+  itemsArray: IItem[];
+}
 
-const RecoilListViewNoMemo: React.FC<IProps> = () => (
+const RecoilListViewNoMemo: React.FC<IProps> = (props) => (
   <RecoilListWrapper className='recoil-list-component'>
-    <h1>RecoilList</h1>
+    <h1>Recoil</h1>
+    {props.itemsArray.map((item) => (
+      <Item itemId={item.id} />
+    ))}
   </RecoilListWrapper>
 );
 

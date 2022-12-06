@@ -1,11 +1,11 @@
 import { useRecoilCallback } from "recoil";
 import { IItem } from "../../../../types";
-import itemAtom from "./atom";
+import itemByIdAtom from "./atom";
 
-const useGetItemState = () => {
-  return useRecoilCallback(({ snapshot }) => (itemId: number): IItem | null => {
-    return snapshot.getLoadable(itemAtom(itemId)).getValue();
+const useGetItemByIdState = () => {
+  return useRecoilCallback(({ snapshot }) => (itemByIdId: number): IItem | null => {
+    return snapshot.getLoadable(itemByIdAtom(itemByIdId)).getValue();
   }, []);
 }
 
-export default useGetItemState;
+export default useGetItemByIdState;

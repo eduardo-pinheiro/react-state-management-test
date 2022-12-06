@@ -1,9 +1,9 @@
-import useitemDispatch from "./dispatch";
-import useGetitemState from "./getState";
-import useitem from "./state";
+import useItemByIdDispatch from "./dispatch";
+import useGetitemByIdState from "./getState";
+import useItemById from "./state";
 
 export {
-  useitemDispatch,
-  useitem,
-  useGetitemState
+  useItemByIdDispatch,
+  useItemById,
+  useGetitemByIdState
 }
